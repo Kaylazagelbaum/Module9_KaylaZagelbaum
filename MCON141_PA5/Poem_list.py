@@ -1,9 +1,12 @@
+"""
+This program will read a poem, reverse it as a new file, and add some comments to the bottom
+"""
 import os
 
 DOCS_DIR = "docs"
 
 
-# This function reads the code and saves it as a list
+# Reads the code and saves it as a list
 def load_poem_list(doc_filename):
 
     global lines
@@ -17,7 +20,7 @@ def load_poem_list(doc_filename):
     return lines
 
 
-# This function reverses the lines and saves a new list
+# Reverses the lines and saves a new list
 def reverse_poem(lines):
 
     global reversed_lines
@@ -25,7 +28,7 @@ def reverse_poem(lines):
     return reversed_lines
 
 
-# This function writes the reversed list into a new file
+# Writes the reversed list into a new file
 def write_new_poem(reversed_lines, doc_filename="poem2.txt"):
 
     full_path = os.path.join(DOCS_DIR, doc_filename)
@@ -34,7 +37,7 @@ def write_new_poem(reversed_lines, doc_filename="poem2.txt"):
             f.write(line + "\n")
 
 
-# This function appends my comments to the reversed poem
+# Appends my comments to the reversed poem
 def append_comments(doc_filename="poem2.txt"):
 
     load_poem_list(doc_filename)
@@ -45,7 +48,7 @@ def append_comments(doc_filename="poem2.txt"):
         f.write("\n Kayla Zagelbaum")
 
 
-# Call the main function
+# Calls the main function
 def main():
 
     load_poem_list("Poem.txt")
